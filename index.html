@@ -1,20 +1,25 @@
 <html>
 <head>
     <title>Smoo</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body bgcolor=white>
-<div id="Sign-In">
-    <fieldset style="width:30%"><legend>LOG-IN</legend>
-    <form method="POST" action="connectivity.php">
-        User <br><input type="text" name="user" size="40"><br>
-        Password <br><input type="password" name="pass" size="40"><br>
-        <input id="login_button" type="submit" name="login" value="Log-In">
-    </form>
-    <form method="POST" action="register.php">
-        <input id="register_button" type="submit" name="register" value="Register">
-    </form>
-    </fieldset>
-</div>
 
+<body>
+    <div id="Sign-In" class="center white" style="width:25%">
+        <img src="images/cow.png">
+        <fieldset>
+            <form method="post" action="login.php">
+                Username <br>
+                <input type="text" name="user" value="Username"><br>
+                Password <br>
+                <input type="password" name="pass"><br><br>
+                <div style="text-align:center">
+                    <input type="submit" value="Log In">
+                </div>
+            </form>
+            <hr>
+            <p class="center" style="color:grey">Don't have an account?  Register <a href="register.php">here!</a></p>
+        </fieldset>
+    </div>
 </body>
 </html>
