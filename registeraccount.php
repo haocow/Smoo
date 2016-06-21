@@ -1,7 +1,7 @@
 <?php
     session_start(); // Starting Session
     $error=''; // Variable To Store Error Message
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['register'])) {
         if (empty($_POST['user']) || empty($_POST['pass'])) {
             $error = "Username or Password is invalid";
         }
@@ -16,18 +16,14 @@
             $password = stripslashes($password);
             $username = mysql_real_escape_string($username);
             $password = mysql_real_escape_string($password);
-            // Selecting Database
             $db = mysql_select_db("jonhao5_login", $connection);
             // SQL query to fetch information of registerd users and finds user match.
-            $query = mysql_query("select * from login where password='$password' AND username='$username'", $connection);
-            $rows = mysql_num_rows($query);
-            if ($rows == 1) {
-                $_SESSION['login_user']=$username; // Initializing Session
-                header("location: profile.php"); // Redirecting To Other Page
+            $query = mysql_query("INSERT INTO `login` (`username`, `password`, `id`) values ('$username', '$password', 0)", $connection);
+            if (mysql_affected_rows() == 1) {
+                header("location: index.php");
             }
             else {
-                $error = "Username or Password is invalid";
-                echo $error;
+                echo "Failed registration";
             }
             mysql_close($connection); // Closing Connection
         }
