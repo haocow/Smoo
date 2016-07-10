@@ -12,7 +12,6 @@
             <img src="images/cow.png">
         </a>
         <hr>
-        <hr>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 </body>
