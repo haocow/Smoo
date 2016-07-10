@@ -4,8 +4,8 @@
 
 <html>
 <head>
-    <title>Your Home Page</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Smoo - Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>

@@ -13,7 +13,9 @@
 
 <body>
     <div id="Sign-In" class="center white" style="width:25%">
-        <img src="images/cow.png">
+        <a href="index.php">
+            <img src="images/cow.png">
+        </a>
         <fieldset>
             <form method="post" action="">
                 Username <br>
