@@ -1,14 +1,9 @@
-<?php
-    include('login.php'); // Includes Login Script
-    if(isset($_SESSION['login_user'])){
-        header("location: profile.php");
-    }
-?>
-
 <html>
 <head>
     <title>Smoo</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="968845654756-jmep9det2p6uaibo34iqg6anh7tr3d2k.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -25,6 +20,7 @@
                 <div style="text-align:center">
                     <input type="submit" name="submit" value="Log In">
                 </div>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
             </form>
             <hr>
             <p class="center" style="color:grey">Don't have an account?  Register <a href="checkusername.php">here!</a></p>
