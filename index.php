@@ -14,6 +14,7 @@
         </a>
         <hr>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <script console.log('ID: ');
     </div>
 </body>
 </html>
