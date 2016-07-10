@@ -11,11 +11,9 @@
         <a href="index.php">
             <img src="images/cow.png">
         </a>
-        <fieldset>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <hr>
-            <p class="center" style="color:grey">Don't have an account?  Register <a href="checkusername.php">here!</a></p>
-        </fieldset>
+        <hr>
+        <hr>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 </body>
 </html>
