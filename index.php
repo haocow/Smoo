@@ -12,16 +12,7 @@
             <img src="images/cow.png">
         </a>
         <fieldset>
-            <form method="post" action="">
-                Username <br>
-                <input type="text" name="user" value="test"><br>
-                Password <br>
-                <input type="password" name="pass" value="testpass"><br><br>
-                <div style="text-align:center">
-                    <input type="submit" name="submit" value="Log In">
-                </div>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            </form>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <hr>
             <p class="center" style="color:grey">Don't have an account?  Register <a href="checkusername.php">here!</a></p>
         </fieldset>
