@@ -1,8 +1,0 @@
-{
-    "name": "Smoo",
-    "description": "Financial App",
-    "image": "heroku/python",
-    "repository": "https://github.com/haocow/Smoo",
-    "keywords": ["python", "django" ],
-    "addons": ["heroku-postgresql" ]
-}
