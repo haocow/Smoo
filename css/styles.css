@@ -3,27 +3,16 @@ html {
     background-color: #ffff99;
 }
 
-div {
-    height: auto;
-    margin: 0 auto;
-    border-radius: 20px;
-}
-
-fieldset {
-    margin: 0 auto;
-    border-style: none;
-}
-
-form {
-    width: 90%;
-    text-align: left;
-    margin: auto;
-}
-
 img {
     display: block;
     margin: auto;
     width: 160px;
+}
+
+/*IDs*/
+#google-button {
+    width: 120px;
+    margin: 0 auto;
 }
 
 /*Classes*/
@@ -37,7 +26,6 @@ img {
 
 .center {
     margin: auto;
-    text-align: center;
     padding: 10px;
 }
 

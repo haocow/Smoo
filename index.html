@@ -2,9 +2,6 @@
 <html>
 <head>
     <meta name="google-signin-client_id" content="968845654756-jmep9det2p6uaibo34iqg6anh7tr3d2k.apps.googleusercontent.com">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js"></script>
-    <script src="./user.js" async defer></script>
     <title>Smoo</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -18,7 +15,11 @@
             <img src="images/cow.png">
         </a>
         <hr>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div id="google-button" class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
+    
+    <script src="angular.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script src="./user.js"></script>
 </body>
 </html>
