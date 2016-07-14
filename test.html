@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+
+<!-- define angular app -->
+<html ng-app="smooApp">
     <head>
         <title>Smoo</title>
 
@@ -13,13 +15,15 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
         <script src="script.js"></script>
     </head>
-    <body>
+
+    <!-- define angular controller -->
+    <body ng-controller="mainController">
         <!-- HEADER AND NAVBAR -->
         <header>
             <nav class="navbar navbar-default navbar-custom">
                 <div class="container">
                     <div class="navbar-header" style="height:50px">
-                        <a class="navbar-brand" href="test.html"><img src="images/cow.png" style="width:25px"></a>
+                        <a class="navbar-brand" href="#"><img src="images/cow.png" style="width:25px"></a>
                     </div>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -33,10 +37,7 @@
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <div id="main">
-
-            <!-- angular templating -->
-            <!-- this is where content will be injected -->
-
+            <div ng-view></div>
         </div>
 
     </body>
