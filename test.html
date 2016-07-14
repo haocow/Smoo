@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="google-signin-client_id" content="968845654756-jmep9det2p6uaibo34iqg6anh7tr3d2k.apps.googleusercontent.com">
-    <title>Smoo</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <head>
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+        <link rel="stylesheet" href="css/styles.css">
 
-<body>
-    <div id="Sign-Out" class="right">
-        <a href="" onclick="signOut()">Sign-Out</a>
-    </div>
-    <div id="Sign-In" class="center white" style="width:250px">
-        <a href="index.html">
-            <img src="images/cow.png">
-        </a>
-        <hr>
-        <div id="google-button" class="g-signin2" data-onsuccess="onSignIn"></div>
-    </div>
+        <!-- load angular and angular route via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav class="navbar navbar-default navbar-custom">
+                <div class="container">
+                    <div class="navbar-header" style="height:50px">
+                        <a class="navbar-brand" href="test.html"><img src="images/cow.png" style="width:25px"></a>
+                    </div>
 
-    <script src="angular.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js"></script>
-    <script src="./user.js"></script>
-</body>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="#signout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main">
+
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+
+        </div>
+
+    </body>
 </html>
