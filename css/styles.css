@@ -1,6 +1,10 @@
 html {
     font-family: "Helvetica Neue";
-    background-color: #ffff99;
+    background-color: #FFFF99;
+}
+
+body {
+    background-color: transparent;
 }
 
 img {
