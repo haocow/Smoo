@@ -1,5 +1,5 @@
 html {
-    font-family: "Trebuchet MS";
+    font-family: "Helvetica Neue";
     background-color: #ffff99;
 }
 
@@ -16,6 +16,14 @@ img {
 }
 
 /*Classes*/
+.navbar-default .navbar-nav>li>a {
+    color: #696969;
+}
+
+.navbar-custom {
+    background-color: #FFFFE6;
+}
+
 .left {
     text-align: left;
 }
