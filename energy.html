@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>JHao's FF Energy</title>
+        <link rel="stylesheet" href="css/styles.css">
+
+        <script>
+            function calculate() {
+                var today = new Date();
+
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+
+                m = checkTime(m);
+                s = checkTime(s);
+
+                var day2 = new Date();
+                var energy = 0;
+
+                if ( (h >= 6 && h < 9) || (h >= 18 && h < 21) ) {
+                    energy = "HOT TIME";
+                }
+                else if (h >= 21 || h < 6) {
+                    day2.setTime(today.getTime() + (9*60*60*1000));
+                    day2.setHours(6);
+                }
+                else {
+                    day2.setTime(today.getTime() + (9*60*60*1000));
+                    day2.setHours(18);
+                }
+                day2.setMinutes(0);
+                day2.setSeconds(0);
+                day2.setMilliseconds(0);
+
+                var timeDiffinMin = Math.abs(day2.getTime() - today.getTime()) / (1000 * 60);
+                var potentialEnergy = Math.ceil( timeDiffinMin / 5 );
+
+                document.getElementById('CurrTime').innerHTML = h + ":" + m + ":" + s;
+                document.getElementById('Count').innerHTML = 85 - potentialEnergy;
+
+                setTimeout(calculate, 500);
+            }
+
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+    </head>
+    <body style="text-align: center" onload="calculate()">
+        <div style="width: 200px; margin:0 auto;" id="CurrTime"></div>
+        <br>
+        <hr>
+        <div style="width: 200px; margin:0 auto;" id="Count"></div>
+    </body>
+</html>
