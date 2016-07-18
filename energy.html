@@ -8,6 +8,7 @@
         <script>
             function calculate() {
                 var today = new Date();
+                today.setHours(9);
 
                 var h = today.getHours();
                 var m = today.getMinutes();
@@ -23,10 +24,12 @@
                     energy = "HOT TIME";
                 }
                 else if (h >= 21 || h < 6) {
+                    energy = 0;
                     day2.setTime(today.getTime() + (9*60*60*1000));
                     day2.setHours(6);
                 }
                 else {
+                    energy = 0;
                     day2.setTime(today.getTime() + (9*60*60*1000));
                     day2.setHours(18);
                 }
@@ -34,11 +37,15 @@
                 day2.setSeconds(0);
                 day2.setMilliseconds(0);
 
-                var timeDiffinMin = Math.abs(day2.getTime() - today.getTime()) / (1000 * 60);
-                var potentialEnergy = Math.floor( timeDiffinMin / 5 );
+
+                if (energy != "HOT TIME") {
+                    var timeDiffinMin = Math.abs(day2.getTime() - today.getTime()) / (1000 * 60);
+                    var potentialEnergy = Math.floor( timeDiffinMin / 5 );
+                    energy = Math.max(0, 85 - potentialEnergy);
+                }
 
                 document.getElementById('CurrTime').innerHTML = h + ":" + m + ":" + s;
-                document.getElementById('Count').innerHTML = 85 - potentialEnergy;
+                document.getElementById('Count').innerHTML = energy;
 
                 setTimeout(calculate, 500);
             }
@@ -53,6 +60,6 @@
         <div style="width: 200px; margin:0 auto;" id="CurrTime"></div>
         <br>
         <hr>
-        <div style="width: 200px; margin:0 auto; font-size:200px" id="Count"></div>
+        <div style="width: 200px; margin:0 auto; font-size:200px;" id="Count"></div>
     </body>
 </html>
