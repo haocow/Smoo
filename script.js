@@ -26,6 +26,15 @@ smooApp.config(function($routeProvider) {
 smooApp.controller('mainController', function($scope) {
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
+
+    $scope.showButton = function() {
+        // This is required to render the Google sign-in button
+        // https://blog.codecentric.de/en/2014/06/angularjs-google-sign-integration/
+        console.log('Showing the Google button')
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    }
 });
 
 smooApp.controller('addController', function($scope) {
