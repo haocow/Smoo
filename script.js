@@ -32,7 +32,7 @@ smooApp.controller('mainController', function($scope) {
         // https://blog.codecentric.de/en/2014/06/angularjs-google-sign-integration/
         console.log('Showing the Google button')
         var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/client:plusone.js';
+        po.src = 'https://apis.google.com/js/platform.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     }
 });
