@@ -19,6 +19,11 @@ smooApp.config(function($routeProvider) {
                 templateUrl: 'pages/view.html',
                 controller: 'viewController'
             })
+
+            .when('/signout', {
+                templateUrl: 'pages/signout.html',
+                controller: 'mainController'
+            })
     }
 );
 
@@ -27,13 +32,20 @@ smooApp.controller('mainController', function($scope) {
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
 
-    $scope.showButton = function() {
-        // This is required to render the Google sign-in button
+    $scope.showGoogleButton = function() {
         // https://blog.codecentric.de/en/2014/06/angularjs-google-sign-integration/
-        console.log('Showing the Google button')
+        console.log('Showing the Google button');
         var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
         po.src = 'https://apis.google.com/js/platform.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    }
+
+    $scope.signOut = function() {
+        console.log('User signing out.');
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
     }
 });
 
@@ -55,11 +67,4 @@ function onSignIn(googleUser) {
     console.log('Family Name: ' + profile.getFamilyName());
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        console.log('User signed out.');
-    });
 }
