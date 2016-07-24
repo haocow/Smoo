@@ -1,3 +1,7 @@
+// google stuff
+var googleAuth = null;
+var googleUser = null;
+
 // create the module and name it smooApp
 var smooApp = angular.module('smooApp', ['ngRoute']);
 
@@ -29,9 +33,6 @@ smooApp.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 smooApp.controller('mainController', function($scope) {
-    // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
-
     $scope.showGoogleButton = function() {
         // https://blog.codecentric.de/en/2014/06/angularjs-google-sign-integration/
         console.log('Showing the Google button');
@@ -50,17 +51,21 @@ smooApp.controller('mainController', function($scope) {
 });
 
 smooApp.controller('addController', function($scope) {
-    $scope.message = 'Add new transactions here';
+	var profile = getCurrentUserProfile();
+	$scope.message = 'Adding page for ' + profile.getName();
 });
 
 smooApp.controller('viewController', function($scope) {
-    $scope.message = 'View your google sheet here';
+	var profile = getCurrentUserProfile();
+	
+	$scope.message = 'Viewing page for ' + profile.getName();
 });
 
 
 /* FUNCTIONS */
 function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
+    googleAuth = gapi.auth2.getAuthInstance();
+	var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
@@ -68,3 +73,22 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
 }
+
+function getMetaContent(Name) {
+	var metaTags = document.getElementsByTagName('meta');
+
+	for (var i = 0; i < metaTags.length; i++) {
+		if (metaTags[i].getAttribute("name") == Name) {
+			return metaTags[i].getAttribute("content");
+		}
+	}
+	return null;
+}
+
+function getCurrentUserProfile() {
+	if (googleUser == null) {
+		googleUser = googleAuth.currentUser.get();
+	}
+	return googleUser.getBasicProfile();
+}
+
