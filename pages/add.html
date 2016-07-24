@@ -1,5 +1,11 @@
 <div class="jumbotron text-center">
     <h1>Add Page</h1>
 
+    <script type="text/javascript">
+        var user = GoogleAuth.currentUser.get();
+        var profile = user.getBasicProfile();
+        console.log('I GOT YOU: ' + profile.getName());
+    </script>
+
     <p>{{ message }}</p>
 </div>
