@@ -51,14 +51,25 @@ smooApp.controller('mainController', function($scope) {
 });
 
 smooApp.controller('addController', function($scope) {
-	var profile = getCurrentUserProfile();
-	$scope.message = 'Adding page for ' + profile.getName();
+	if (googleAuth == null) {
+	    // Not signed in
+	    $scope.message = 'Please sign in first'
+	} else {
+	    // Already signed in
+	    var profile = getCurrentUserProfile();
+	    $scope.message = 'Adding page for ' + profile.getName();
+	}
 });
 
 smooApp.controller('viewController', function($scope) {
-	var profile = getCurrentUserProfile();
-	
-	$scope.message = 'Viewing page for ' + profile.getName();
+	if (googleAuth == null) {
+	    // Not signed in
+	    $scope.message = 'Please sign in first'
+	} else {
+	    // Already signed in
+        var profile = getCurrentUserProfile();
+        $scope.message = 'Viewing page for ' + profile.getName();
+	}
 });
 
 
