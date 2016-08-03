@@ -110,4 +110,3 @@ function getCurrentUserProfile() {
 	}
 	return googleUser.getBasicProfile();
 }
-
