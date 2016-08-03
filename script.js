@@ -47,13 +47,14 @@ smooApp.controller('mainController', function($scope) {
         auth2.signOut().then(function () {
             console.log('User signed out.');
         });
+        auth2.disconnect();
     }
 });
 
 smooApp.controller('addController', function($scope) {
 	if (googleAuth == null) {
 	    // Not signed in
-	    $scope.message = 'Please sign in first'
+	    $scope.message = 'Please sign in first';
 	} else {
 	    // Already signed in
 	    var profile = getCurrentUserProfile();
@@ -64,7 +65,7 @@ smooApp.controller('addController', function($scope) {
 smooApp.controller('viewController', function($scope) {
 	if (googleAuth == null) {
 	    // Not signed in
-	    $scope.message = 'Please sign in first'
+	    $scope.message = 'Please sign in first';
 	} else {
 	    // Already signed in
         var profile = getCurrentUserProfile();
