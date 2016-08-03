@@ -47,6 +47,8 @@ smooApp.controller('mainController', function($scope) {
         auth2.signOut().then(function () {
             console.log('User signed out.');
         });
+
+        clearGlobals();
         auth2.disconnect();
     }
 });
@@ -75,6 +77,11 @@ smooApp.controller('viewController', function($scope) {
 
 
 /* FUNCTIONS */
+function clearGlobals() {
+    googleAuth = null;
+    googleUser = null;
+}
+
 function onSignIn(googleUser) {
     googleAuth = gapi.auth2.getAuthInstance();
 	var profile = googleUser.getBasicProfile();
