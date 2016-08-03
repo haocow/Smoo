@@ -1,10 +1,4 @@
-Jon Hao's trying to learn shit:
+jonhao.com
 
-[] Create Landing Page
-[] Create Sign-up
-[] Create Log-in
+Welcome to Smoo!  Your own personal financial tracker
 
-NEVER git push in the webserver
-
-just use:
-    git pull origin/*BRANCH_NAME*
