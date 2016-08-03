@@ -1,12 +1,3 @@
-www.jonhao.com
+jonhao.com
 
-Jon Hao's trying to learn shit:
-
-[] Create Landing Page
-[] Create Sign-up
-[] Create Log-in
-
-NEVER git push in the webserver
-
-just use:
-    git pull origin/*BRANCH_NAME*
+Welcome to Smoo!  Your own personal financial tracker
